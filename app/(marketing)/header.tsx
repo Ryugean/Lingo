@@ -1,16 +1,16 @@
-import Image from "next/image"
-import { 
-  ClerkLoaded, 
-  ClerkLoading, 
+import Image from "next/image";
+import {
+  ClerkLoaded,
+  ClerkLoading,
   SignedIn,
   SignedOut,
   SignInButton,
   SignOutButton,
-  UserButton
-} from "@clerk/nextjs"
-import { Loader } from "lucide-react"
-import { Sign } from "node:crypto"
-import { Button } from "@/components/ui/button"
+  UserButton,
+} from "@clerk/nextjs";
+import { Loader } from "lucide-react";
+import { Sign } from "node:crypto";
+import { Button } from "@/components/ui/button";
 
 export const Header = () => {
   return (
@@ -18,27 +18,26 @@ export const Header = () => {
       <div className="lg:max-w-screen-lg mx-auto flex items-center justify-between h-full">
         <div className="pt-8 pl-4 pb-7 flex items-center gap-x-3">
           <Image src="/Goblin_Logo.png" height={80} width={80} alt="Mascot" />
-          <h1 className="text-2xl font-extrabold text-green-600 tracking-wide">Goblingo</h1>
+          <h1 className="text-2xl font-extrabold text-green-600 tracking-wide">
+            Goblingo
+          </h1>
         </div>
         <ClerkLoading>
-          <Loader className="h-5 w-5 text-muted-foreground animate-spin"/>
+          <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
         </ClerkLoading>
         <ClerkLoaded>
           <SignedIn>
             <UserButton />
           </SignedIn>
           <SignedOut>
-            <SignInButton
-              mode="modal"
-              forceRedirectUrl="/learn"
-            >
-            <Button size='lg' variant='ghost'>
-              Login
-            </Button>
+            <SignInButton mode="modal" forceRedirectUrl="/learn">
+              <Button size="lg" variant="ghost">
+                Login
+              </Button>
             </SignInButton>
           </SignedOut>
         </ClerkLoaded>
       </div>
     </header>
-  )
-}
+  );
+};
