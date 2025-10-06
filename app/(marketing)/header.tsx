@@ -9,7 +9,6 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
-import { Sign } from "node:crypto";
 import { Button } from "@/components/ui/button";
 
 export const Header = () => {
